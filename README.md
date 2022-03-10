@@ -4,7 +4,7 @@
 
 **Version:** 2.1
 
-**Date: **October 13, 2021
+Date:October 13, 2021
 
 Python scipt to characterize a black-hole image, measure its diameter and FWHM, as well as characterize its visibility map.
 
