@@ -29,5 +29,5 @@ Upon completion, the script will generate a diagnostic plot for each of the imag
     zFirstHor the baseline length of the first horizontal visibility minimum in Glambda
     zFirstVer the baseline length of the first vertical visibility minimum in Glambda
 
-Full documentation in /docs/html and /docs/latex
+Full documentation click [here](https://dpsaltis.github.io/CHARM/html)
 
