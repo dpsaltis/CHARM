@@ -1,0 +1,39 @@
+\begin{theindex}
+
+  \item {char\_image}
+    \subitem {charm}, \hyperpage{10}
+  \item {charm}, \hyperpage{9}
+    \subitem {char\_image}, \hyperpage{10}
+    \subitem {FilterImage}, \hyperpage{12}
+    \subitem {findcenter}, \hyperpage{13}
+    \subitem {ImageParams}, \hyperpage{14}
+    \subitem {zcr}, \hyperpage{15}
+
+  \indexspace
+
+  \item {FilterImage}
+    \subitem {charm}, \hyperpage{12}
+  \item {findcenter}
+    \subitem {charm}, \hyperpage{13}
+
+  \indexspace
+
+  \item {ImageParams}
+    \subitem {charm}, \hyperpage{14}
+
+  \indexspace
+
+  \item {plotParams}, \hyperpage{16}
+    \subitem {setPlotParams}, \hyperpage{17}
+
+  \indexspace
+
+  \item {setPlotParams}
+    \subitem {plotParams}, \hyperpage{17}
+
+  \indexspace
+
+  \item {zcr}
+    \subitem {charm}, \hyperpage{15}
+
+\end{theindex}

@@ -1,0 +1,93 @@
+\hypertarget{charm_8py}{}\section{charm.\+py File Reference}
+\label{charm_8py}\index{charm.py@{charm.py}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacecharm}{charm}}
+\begin{DoxyCompactList}\small\item\em Python scipt to characterize a black-\/hole image This version finds first the center of the image and does not invoke any filtering. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacecharm_a5607b264551d2edebff8f7491a53e838}{zcr}} (x, y)
+\begin{DoxyCompactList}\small\item\em Finds zero crossings. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacecharm_a033b21f5f3466dba63640f1884bc0fb1}{findcenter}} (Npixels, X, Y, Image\+Filter, Dmax=25., ND=50, Ngrid=Ngrid, Nslice=Nslice, i\+Floor=i\+Floor, radmin=15)
+\begin{DoxyCompactList}\small\item\em \# Finds the center of the image by minimizing the spread of the radii measured along different azimuthal slices \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacecharm_a4361ade65d39e905f4fe1fbef2a6a152}{Filter\+Image}} (Npts, X, Y, I, dX, Npadfact=16)
+\begin{DoxyCompactList}\small\item\em (In principle) filters an image and returns its visibility map \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacecharm_af408cc39066a488410137a7ff144d1ad}{Image\+Params}} (Npixels, X, Y, Image\+Filter, d0X=d0X, d0Y=d0Y, Ngrid=Ngrid, Nslice=Nslice, i\+Floor=i\+Floor)
+\begin{DoxyCompactList}\small\item\em function Image\+Params(Npixels,X,Y,Image\+Filter,d0X=d0X,d0Y=d0Y) \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacecharm_af661e8a1e79e9d287bbd932dfb08ad61}{char\+\_\+image}} (label, movieframe, Npixels, X, Y, I)
+\begin{DoxyCompactList}\small\item\em function char\+\_\+image(label,movieframe,\+Npixels, X,\+Y,\+I) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{namespacecharm_a74d486e7ec4620488934984082bba12a}{d0X}} = 0.\+0
+\item 
+float \mbox{\hyperlink{namespacecharm_afb4790352700b5eed1f0468a5bf875bf}{d0Y}} = 0.\+0
+\item 
+int \mbox{\hyperlink{namespacecharm_a86b62e26592963beccfe23b7fc27c6cf}{convert}} = 1./206.\+26
+\item 
+float \mbox{\hyperlink{namespacecharm_a056a46ed88ece0b47c3cb2b8e11ce21f}{Rad\+Max}} = 50.\+0
+\item 
+int \mbox{\hyperlink{namespacecharm_a3a58951c597432610049813907cc4305}{Ngrid}} = 256
+\item 
+int \mbox{\hyperlink{namespacecharm_a080a78d6a6b376fd8978d8d665113740}{Nslice}} = 128
+\item 
+float \mbox{\hyperlink{namespacecharm_a4313cb34b067d36f49ce9bdd81bb6eb5}{i\+Floor}} = 0.\+10
+\item 
+string \mbox{\hyperlink{namespacecharm_a46c20eb2a26abeb1e934cd66e1dd6484}{path}} = \char`\"{}./\char`\"{}
+\begin{DoxyCompactList}\small\item\em M\+A\+IN C\+O\+DE. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{namespacecharm_a75e4c5ba6d16aefee0f04c7a3f0061f6}{outfile}} = \textquotesingle{}dataset\+\_\+ehtim.\+out\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacecharm_a926ae2b743aef80aabc8311535d2ce94}{asciifile}} = open(outfile,\textquotesingle{}w\textquotesingle{})
+\item 
+list \mbox{\hyperlink{namespacecharm_a83005a8fee8e5caaf1126e17e5a30c7a}{listoffiles}} = \mbox{[}x for x in os.\+listdir(path) if ((x.\+endswith(\char`\"{}.fits\char`\"{})))\mbox{]}
+\item 
+int \mbox{\hyperlink{namespacecharm_a750b5d744c39a06bfb13e6eb010e35d0}{index}} = 1
+\item 
+\mbox{\hyperlink{namespacecharm_a39bf99cca1e152f715cc20dffd261ead}{hdulist}} = fits.\+open(path+file\+\_\+name)
+\item 
+\mbox{\hyperlink{namespacecharm_acab07a969db3493dffcc4db737d4fb74}{hdu}} = hdulist\mbox{[}0\mbox{]}
+\item 
+\mbox{\hyperlink{namespacecharm_a41ab4b8b4e6b05e8489555b1bbc7f845}{array}} = hdu.\+data
+\item 
+float \mbox{\hyperlink{namespacecharm_a662c6bbf976045a82c97b6ee9a4fb584}{pixel}} = np.\+abs(hdu.\+header\mbox{[}\textquotesingle{}C\+D\+E\+L\+T1\textquotesingle{}\mbox{]})$\ast$3.\+6e9
+\item 
+\mbox{\hyperlink{namespacecharm_a93a4b79b87861da31e2c366510535a95}{Npts}} = np.\+shape(array)\mbox{[}0\mbox{]}
+\item 
+tuple \mbox{\hyperlink{namespacecharm_acc34245cc1b43c609c08790cf26ecebb}{F\+OV}} = (np.\+float(Npts-\/1))$\ast$pixel
+\item 
+\mbox{\hyperlink{namespacecharm_ac51b57a703ba1c5869228690c93e1701}{X}} = np.\+linspace(-\/F\+OV/2,F\+OV/2,num=Npts,endpoint=True)
+\item 
+\mbox{\hyperlink{namespacecharm_a0867f43e27585e019c13f7f4b7c4ab6b}{Y}} = np.\+linspace(-\/F\+OV/2,F\+OV/2,num=Npts,endpoint=True)
+\item 
+\mbox{\hyperlink{namespacecharm_a66cc12e3c6d68de3fef6de89cf033f67}{I}} = array
+\item 
+\mbox{\hyperlink{namespacecharm_aa97ea574f414535a926d0435057b7c2d}{label1}} = file\+\_\+name.\+replace(\textquotesingle{}\+\_\+\textquotesingle{},\textquotesingle{} \textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacecharm_a22f45a3cb4f074e609f58ebaeef0ecf9}{label}} = label1.\+replace(\textquotesingle{}.fits\textquotesingle{},\textquotesingle{}\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacecharm_a6ef879b9d6d5a3e2677a977faff2600e}{movieframe}} = str(index).zfill(4)
+\item 
+\mbox{\hyperlink{namespacecharm_a23d0c7d8c59aa5bf202e86e0ee3d97f7}{rad25}}
+\item 
+\mbox{\hyperlink{namespacecharm_a8655e939d936a6038060bdde34180805}{rad50}}
+\item 
+\mbox{\hyperlink{namespacecharm_a8e9fa04f7279c687f05271736d6e70fe}{rad75}}
+\item 
+\mbox{\hyperlink{namespacecharm_a69438d054af68ffa0472d36dbe81ac09}{F\+W\+H\+M25}}
+\item 
+\mbox{\hyperlink{namespacecharm_af8107da40bae0b955292e5511466fd5c}{F\+W\+H\+M50}}
+\item 
+\mbox{\hyperlink{namespacecharm_ad2133619b884a07f3c5f90c799fa7266}{F\+W\+H\+M75}}
+\item 
+\mbox{\hyperlink{namespacecharm_aef3542da00326419291c6772efe6998e}{frac\+Circ}}
+\item 
+\mbox{\hyperlink{namespacecharm_a23c6d9e9ae354f66e17cfec2b85f8dfb}{z\+First\+Hor}}
+\item 
+\mbox{\hyperlink{namespacecharm_a111efd88a9a0015a8d28f30a5acdef25}{z\+First\+Ver}}
+\item 
+list \mbox{\hyperlink{namespacecharm_a9536fc38328f2f680ec1a025fb0b9d2b}{list\+Results}} = \mbox{[}file\+\_\+name, 2.$\ast$rad50, 2.$\ast$rad25, 2.$\ast$rad75, F\+W\+H\+M50, F\+W\+H\+M25, F\+W\+H\+M75,frac\+Circ\mbox{]}
+\item 
+string \mbox{\hyperlink{namespacecharm_a2ea9f0fea01c343478673df67737695d}{res}} = \char`\"{} \char`\"{}.join(\mbox{[}str(i) for i in list\+Results\mbox{]})
+\end{DoxyCompactItemize}

@@ -1,0 +1,423 @@
+\hypertarget{namespacecharm}{}\section{charm Namespace Reference}
+\label{namespacecharm}\index{charm@{charm}}
+
+
+Python scipt to characterize a black-\/hole image This version finds first the center of the image and does not invoke any filtering.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacecharm_a5607b264551d2edebff8f7491a53e838}{zcr}} (x, y)
+\begin{DoxyCompactList}\small\item\em Finds zero crossings. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacecharm_a033b21f5f3466dba63640f1884bc0fb1}{findcenter}} (Npixels, X, Y, Image\+Filter, Dmax=25., ND=50, Ngrid=Ngrid, Nslice=Nslice, i\+Floor=i\+Floor, radmin=15)
+\begin{DoxyCompactList}\small\item\em \# Finds the center of the image by minimizing the spread of the radii measured along different azimuthal slices \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacecharm_a4361ade65d39e905f4fe1fbef2a6a152}{Filter\+Image}} (Npts, X, Y, I, dX, Npadfact=16)
+\begin{DoxyCompactList}\small\item\em (In principle) filters an image and returns its visibility map \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacecharm_ab4a4aecd11782c79b28e743b038894b6}{Image\+Params}} (Npixels, X, Y, Image\+Filter, d0X=d0X, d0Y=d0Y, Ngrid=Ngrid, Nslice=Nslice, i\+Floor=i\+Floor, radmin=5.)
+\begin{DoxyCompactList}\small\item\em Measures the diameter and F\+W\+HM of a ring-\/like image. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacecharm_af661e8a1e79e9d287bbd932dfb08ad61}{char\+\_\+image}} (label, movieframe, Npixels, X, Y, I)
+\begin{DoxyCompactList}\small\item\em function char\+\_\+image(label,movieframe,\+Npixels, X,\+Y,\+I) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacecharm_a74d486e7ec4620488934984082bba12a}\label{namespacecharm_a74d486e7ec4620488934984082bba12a}} 
+float {\bfseries d0X} = 0.\+0
+\item 
+\mbox{\Hypertarget{namespacecharm_afb4790352700b5eed1f0468a5bf875bf}\label{namespacecharm_afb4790352700b5eed1f0468a5bf875bf}} 
+float {\bfseries d0Y} = 0.\+0
+\item 
+\mbox{\Hypertarget{namespacecharm_a86b62e26592963beccfe23b7fc27c6cf}\label{namespacecharm_a86b62e26592963beccfe23b7fc27c6cf}} 
+int {\bfseries convert} = 1./206.\+26
+\item 
+\mbox{\Hypertarget{namespacecharm_a056a46ed88ece0b47c3cb2b8e11ce21f}\label{namespacecharm_a056a46ed88ece0b47c3cb2b8e11ce21f}} 
+float {\bfseries Rad\+Max} = 50.\+0
+\item 
+\mbox{\Hypertarget{namespacecharm_a3a58951c597432610049813907cc4305}\label{namespacecharm_a3a58951c597432610049813907cc4305}} 
+int {\bfseries Ngrid} = 256
+\item 
+\mbox{\Hypertarget{namespacecharm_a080a78d6a6b376fd8978d8d665113740}\label{namespacecharm_a080a78d6a6b376fd8978d8d665113740}} 
+int {\bfseries Nslice} = 128
+\item 
+\mbox{\Hypertarget{namespacecharm_a4313cb34b067d36f49ce9bdd81bb6eb5}\label{namespacecharm_a4313cb34b067d36f49ce9bdd81bb6eb5}} 
+float {\bfseries i\+Floor} = 0.\+01
+\item 
+\mbox{\Hypertarget{namespacecharm_a83005a8fee8e5caaf1126e17e5a30c7a}\label{namespacecharm_a83005a8fee8e5caaf1126e17e5a30c7a}} 
+list {\bfseries listoffiles} = \mbox{[}x for x in os.\+listdir(path) if ((x.\+endswith(\char`\"{}.fits\char`\"{})))\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacecharm_a750b5d744c39a06bfb13e6eb010e35d0}\label{namespacecharm_a750b5d744c39a06bfb13e6eb010e35d0}} 
+int {\bfseries index} = 1
+\item 
+\mbox{\Hypertarget{namespacecharm_a39bf99cca1e152f715cc20dffd261ead}\label{namespacecharm_a39bf99cca1e152f715cc20dffd261ead}} 
+{\bfseries hdulist} = fits.\+open(path+file\+\_\+name)
+\item 
+\mbox{\Hypertarget{namespacecharm_acab07a969db3493dffcc4db737d4fb74}\label{namespacecharm_acab07a969db3493dffcc4db737d4fb74}} 
+{\bfseries hdu} = hdulist\mbox{[}0\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacecharm_a41ab4b8b4e6b05e8489555b1bbc7f845}\label{namespacecharm_a41ab4b8b4e6b05e8489555b1bbc7f845}} 
+{\bfseries array} = hdu.\+data
+\item 
+\mbox{\Hypertarget{namespacecharm_a662c6bbf976045a82c97b6ee9a4fb584}\label{namespacecharm_a662c6bbf976045a82c97b6ee9a4fb584}} 
+float {\bfseries pixel} = np.\+abs(hdu.\+header\mbox{[}\textquotesingle{}C\+D\+E\+L\+T1\textquotesingle{}\mbox{]})$\ast$3.\+6e9
+\item 
+\mbox{\Hypertarget{namespacecharm_a93a4b79b87861da31e2c366510535a95}\label{namespacecharm_a93a4b79b87861da31e2c366510535a95}} 
+{\bfseries Npts} = np.\+shape(array)\mbox{[}0\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacecharm_acc34245cc1b43c609c08790cf26ecebb}\label{namespacecharm_acc34245cc1b43c609c08790cf26ecebb}} 
+tuple {\bfseries F\+OV} = (np.\+float(Npts-\/1))$\ast$pixel
+\item 
+\mbox{\Hypertarget{namespacecharm_ac51b57a703ba1c5869228690c93e1701}\label{namespacecharm_ac51b57a703ba1c5869228690c93e1701}} 
+{\bfseries X} = np.\+linspace(-\/F\+OV/2,F\+OV/2,num=Npts,endpoint=True)
+\item 
+\mbox{\Hypertarget{namespacecharm_a0867f43e27585e019c13f7f4b7c4ab6b}\label{namespacecharm_a0867f43e27585e019c13f7f4b7c4ab6b}} 
+{\bfseries Y} = np.\+linspace(-\/F\+OV/2,F\+OV/2,num=Npts,endpoint=True)
+\item 
+\mbox{\Hypertarget{namespacecharm_a66cc12e3c6d68de3fef6de89cf033f67}\label{namespacecharm_a66cc12e3c6d68de3fef6de89cf033f67}} 
+{\bfseries I} = array
+\item 
+\mbox{\Hypertarget{namespacecharm_aa97ea574f414535a926d0435057b7c2d}\label{namespacecharm_aa97ea574f414535a926d0435057b7c2d}} 
+{\bfseries label1} = file\+\_\+name.\+replace(\textquotesingle{}\+\_\+\textquotesingle{},\textquotesingle{} \textquotesingle{})
+\item 
+\mbox{\Hypertarget{namespacecharm_a22f45a3cb4f074e609f58ebaeef0ecf9}\label{namespacecharm_a22f45a3cb4f074e609f58ebaeef0ecf9}} 
+{\bfseries label} = label1.\+replace(\textquotesingle{}.fits\textquotesingle{},\textquotesingle{}\textquotesingle{})
+\item 
+\mbox{\Hypertarget{namespacecharm_a6ef879b9d6d5a3e2677a977faff2600e}\label{namespacecharm_a6ef879b9d6d5a3e2677a977faff2600e}} 
+{\bfseries movieframe} = str(index).zfill(4)
+\item 
+\mbox{\Hypertarget{namespacecharm_a23d0c7d8c59aa5bf202e86e0ee3d97f7}\label{namespacecharm_a23d0c7d8c59aa5bf202e86e0ee3d97f7}} 
+{\bfseries rad25}
+\item 
+\mbox{\Hypertarget{namespacecharm_a8655e939d936a6038060bdde34180805}\label{namespacecharm_a8655e939d936a6038060bdde34180805}} 
+{\bfseries rad50}
+\item 
+\mbox{\Hypertarget{namespacecharm_a8e9fa04f7279c687f05271736d6e70fe}\label{namespacecharm_a8e9fa04f7279c687f05271736d6e70fe}} 
+{\bfseries rad75}
+\item 
+\mbox{\Hypertarget{namespacecharm_a69438d054af68ffa0472d36dbe81ac09}\label{namespacecharm_a69438d054af68ffa0472d36dbe81ac09}} 
+{\bfseries F\+W\+H\+M25}
+\item 
+\mbox{\Hypertarget{namespacecharm_af8107da40bae0b955292e5511466fd5c}\label{namespacecharm_af8107da40bae0b955292e5511466fd5c}} 
+{\bfseries F\+W\+H\+M50}
+\item 
+\mbox{\Hypertarget{namespacecharm_ad2133619b884a07f3c5f90c799fa7266}\label{namespacecharm_ad2133619b884a07f3c5f90c799fa7266}} 
+{\bfseries F\+W\+H\+M75}
+\item 
+\mbox{\Hypertarget{namespacecharm_aef3542da00326419291c6772efe6998e}\label{namespacecharm_aef3542da00326419291c6772efe6998e}} 
+{\bfseries frac\+Circ}
+\item 
+\mbox{\Hypertarget{namespacecharm_a23c6d9e9ae354f66e17cfec2b85f8dfb}\label{namespacecharm_a23c6d9e9ae354f66e17cfec2b85f8dfb}} 
+{\bfseries z\+First\+Hor}
+\item 
+\mbox{\Hypertarget{namespacecharm_a111efd88a9a0015a8d28f30a5acdef25}\label{namespacecharm_a111efd88a9a0015a8d28f30a5acdef25}} 
+{\bfseries z\+First\+Ver}
+\item 
+\mbox{\Hypertarget{namespacecharm_a9536fc38328f2f680ec1a025fb0b9d2b}\label{namespacecharm_a9536fc38328f2f680ec1a025fb0b9d2b}} 
+list {\bfseries list\+Results} = \mbox{[}file\+\_\+name, 2.$\ast$rad50, 2.$\ast$rad25, 2.$\ast$rad75, F\+W\+H\+M50, F\+W\+H\+M25, F\+W\+H\+M75,frac\+Circ,z\+First\+Hor,z\+First\+Ver\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacecharm_a2ea9f0fea01c343478673df67737695d}\label{namespacecharm_a2ea9f0fea01c343478673df67737695d}} 
+string {\bfseries res} = \char`\"{} \char`\"{}.join(\mbox{[}str(i) for i in list\+Results\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Python scipt to characterize a black-\/hole image This version finds first the center of the image and does not invoke any filtering. 
+
+\begin{DoxyAuthor}{Author}
+UofA Group
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+October 19, 2021
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyWarning}{Warning}
+No known warnings
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]Nothing left \end{DoxyRefDesc}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacecharm_af661e8a1e79e9d287bbd932dfb08ad61}\label{namespacecharm_af661e8a1e79e9d287bbd932dfb08ad61}} 
+\index{charm@{charm}!char\_image@{char\_image}}
+\index{char\_image@{char\_image}!charm@{charm}}
+\subsubsection{\texorpdfstring{char\_image()}{char\_image()}}
+{\footnotesize\ttfamily def charm.\+char\+\_\+image (\begin{DoxyParamCaption}\item[{}]{label,  }\item[{}]{movieframe,  }\item[{}]{Npixels,  }\item[{}]{X,  }\item[{}]{Y,  }\item[{}]{I }\end{DoxyParamCaption})}
+
+
+
+function char\+\_\+image(label,movieframe,\+Npixels, X,\+Y,\+I) 
+
+main function to characterize an image of Npixels by Npixels, stored in the 2D array I, with horizontal and vertical coordinates stored in arrays X and Y. Image characterization subroutine
+
+Given a square image of Npixels per side, with coordinates in X and Y, and brightness in I, this subroutine first filters the image (not in this script), find its center, measures the distribution of \char`\"{}radii\char`\"{} and \char`\"{}widths\char`\"{} for a grid of Nslice azimuthal slices, and plots all of the above together with two cross section of the visibility map of the image.
+
+Besides returning a lot of these parameters, it also generates a 6-\/panel diagnostic plot, labeled with the input stirng \textquotesingle{}label\textquotesingle{}.
+
+The plot is saved as a P\+NG file with name movieframe+\char`\"{}.\+png\char`\"{} If \textquotesingle{}movieframe\textquotesingle{} corresponds to an increasing integer, the resulting files can be easily combined into a movie with ffmpeg.
+
+@label a string to be placed on the image, for recongition @movieframe a string for the name of the plot file 
+\begin{DoxyParams}{Parameters}
+{\em Npixels} & the number of points per dimension (assuming square image) \\
+\hline
+{\em X} & a 1D array of Npts points with the X-\/coordinates \\
+\hline
+{\em Y} & a 1D array of Npts points with the Y-\/coordinates \\
+\hline
+{\em I} & a 2D array of Npts$\ast$\+Npts points with the image brightness\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+rad25 a float with the 25th percentile value of the radius 
+
+rad50 a float with the 50th percentile value of the radius 
+
+rad75 a float with the 75th percentile value of the radius 
+
+F\+W\+H\+M25 a float with the 25th percentile value of the F\+W\+HM 
+
+F\+W\+H\+M05 a float with the 50th percentile value of the F\+W\+HM 
+
+F\+W\+H\+M75 a float with the 75th percentile value of the F\+W\+HM 
+
+frac\+Circ a float with the fraction of pi with brightness above the floor 
+
+z\+First\+Hor the baseline length of the first horizontal visibility minimum in Glambda 
+
+z\+First\+Ver the baseline length of the first vertical visibility minimum in Glambda
+
+nothing
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+UofA Group
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+1
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+October 22, 2021
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000007}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyWarning}{Warning}
+No known warnings
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000007}{Todo}}]Nothing left \end{DoxyRefDesc}
+\mbox{\Hypertarget{namespacecharm_a4361ade65d39e905f4fe1fbef2a6a152}\label{namespacecharm_a4361ade65d39e905f4fe1fbef2a6a152}} 
+\index{charm@{charm}!FilterImage@{FilterImage}}
+\index{FilterImage@{FilterImage}!charm@{charm}}
+\subsubsection{\texorpdfstring{FilterImage()}{FilterImage()}}
+{\footnotesize\ttfamily def charm.\+Filter\+Image (\begin{DoxyParamCaption}\item[{}]{Npts,  }\item[{}]{X,  }\item[{}]{Y,  }\item[{}]{I,  }\item[{}]{dX,  }\item[{}]{Npadfact = {\ttfamily 16} }\end{DoxyParamCaption})}
+
+
+
+(In principle) filters an image and returns its visibility map 
+
+For this version of the script, there is no filtering.
+
+Given a square image of Npts per side, with coordinates in X and Y and brightness in I, the subroutine just returns the visibility map of the image.
+
+Npadfact is the multiplicative padding factor for calculating the 2D Fourier transform of the image with default Npadfact=16
+
+
+\begin{DoxyParams}{Parameters}
+{\em Npts} & the number of points per dimension (assuming square image) \\
+\hline
+{\em X} & a 1D array of Npts points with the X-\/coordinates \\
+\hline
+{\em Y} & a 1D array of Npts points with the Y-\/coordinates \\
+\hline
+{\em I} & a 2D array of Npts$\ast$\+Npts points with the image brightness \\
+\hline
+{\em dX} & a float with the pixel width in uas\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Filter\+Image a 2D Npts$\ast$\+Npts array with the filtered image 
+
+u\+Grid a 2D Npts$\ast$\+Npts array with the u-\/coordinate grid in Glambda 
+
+v\+Grid a 2D Npts$\ast$\+Npts array with the v-\/coordinate grid in Glambda 
+
+Visibility a 2D Npts$\ast$\+Npts array with the complex Visibility
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+UofA Group
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+September 13, 2018
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000005}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyWarning}{Warning}
+No known warnings
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000005}{Todo}}]Nothing left \end{DoxyRefDesc}
+\mbox{\Hypertarget{namespacecharm_a033b21f5f3466dba63640f1884bc0fb1}\label{namespacecharm_a033b21f5f3466dba63640f1884bc0fb1}} 
+\index{charm@{charm}!findcenter@{findcenter}}
+\index{findcenter@{findcenter}!charm@{charm}}
+\subsubsection{\texorpdfstring{findcenter()}{findcenter()}}
+{\footnotesize\ttfamily def charm.\+findcenter (\begin{DoxyParamCaption}\item[{}]{Npixels,  }\item[{}]{X,  }\item[{}]{Y,  }\item[{}]{Image\+Filter,  }\item[{}]{Dmax = {\ttfamily 25.},  }\item[{}]{ND = {\ttfamily 50},  }\item[{}]{Ngrid = {\ttfamily Ngrid},  }\item[{}]{Nslice = {\ttfamily Nslice},  }\item[{}]{i\+Floor = {\ttfamily iFloor},  }\item[{}]{radmin = {\ttfamily 15} }\end{DoxyParamCaption})}
+
+
+
+\# Finds the center of the image by minimizing the spread of the radii measured along different azimuthal slices 
+
+Given a square image of Npixels per side, with coordinates in X and Y and brightness in Image\+Filter, it finds its center by searching through a square grid of N\+Dx\+ND points in the range \mbox{[}-\/Dmax,Dmax\mbox{]} along each orientation. The two parameters are inputs but defaults are Dmax=25 and ND=50.
+
+The remaining default parameters are from the global variables.
+
+In this version of the script, there is no image filtering; any mention of fitering is for compatibility with other script versions.
+
+All image coordinates and distances are in the native units of the image provided.
+
+v2.\+0 There is now a minimum radius requirement for the ring stored in \textquotesingle{}radmin\textquotesingle{}. Introducing this ensures that the algorithm doesn\textquotesingle{}t focus on compact knots. This value can be different between the centering and the characterization function, with the former typically being larger.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Npixels} & the number of points per dimension (assuming square image) \\
+\hline
+{\em X} & a 1D array of Npts points with the X-\/coordinates \\
+\hline
+{\em Y} & a 1D array of Npts points with the Y-\/coordinates \\
+\hline
+{\em Image\+Filter} & a 2D array of Npts$\ast$\+Npts points with the image brightness\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+d0X a float with the x-\/displacement of the center 
+
+d0Y a float with the y-\/displacement of the center
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+UofA Group
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+October 19, 2021
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000004}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyWarning}{Warning}
+No known warnings
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000004}{Todo}}]Nothing left\end{DoxyRefDesc}
+\mbox{\Hypertarget{namespacecharm_ab4a4aecd11782c79b28e743b038894b6}\label{namespacecharm_ab4a4aecd11782c79b28e743b038894b6}} 
+\index{charm@{charm}!ImageParams@{ImageParams}}
+\index{ImageParams@{ImageParams}!charm@{charm}}
+\subsubsection{\texorpdfstring{ImageParams()}{ImageParams()}}
+{\footnotesize\ttfamily def charm.\+Image\+Params (\begin{DoxyParamCaption}\item[{}]{Npixels,  }\item[{}]{X,  }\item[{}]{Y,  }\item[{}]{Image\+Filter,  }\item[{}]{d0X = {\ttfamily d0X},  }\item[{}]{d0Y = {\ttfamily d0Y},  }\item[{}]{Ngrid = {\ttfamily Ngrid},  }\item[{}]{Nslice = {\ttfamily Nslice},  }\item[{}]{i\+Floor = {\ttfamily iFloor},  }\item[{}]{radmin = {\ttfamily 5.} }\end{DoxyParamCaption})}
+
+
+
+Measures the diameter and F\+W\+HM of a ring-\/like image. 
+
+Given a square image of Npixels per side, with coordinates in X and Y, brightness in Image\+Filter, and image center at d0X and d0Y, measures the distribution of \char`\"{}radii\char`\"{} and \char`\"{}widths\char`\"{} of the image for a grid of Nslice azimuthal slices with a distance up to Rad\+Max
+
+It only considers slices for which the max brightness is larger than i\+Floor$\ast$ifilter\+Max, which is important for, e.\+g., C\+L\+E\+AN images that have a substantial central floor.
+
+v2.\+0 There is now a minimum radius requirement for the ring stored in \textquotesingle{}radmin\textquotesingle{}. Introducing this ensures that the algorithm doesn\textquotesingle{}t focus on compact knots. This value can be different between the centering and the characterization function, with the former typically being larger.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Npixels} & the number of points per dimension (assuming square image) \\
+\hline
+{\em X} & a 1D array of Npts points with the X-\/coordinates \\
+\hline
+{\em Y} & a 1D array of Npts points with the Y-\/coordinates \\
+\hline
+{\em Image\+Filter} & a 2D array of Npts$\ast$\+Npts points with the image brightness \\
+\hline
+{\em d0X} & a float with the x-\/displacement of the center \\
+\hline
+{\em d0Y} & a float with the y-\/displacement of the center\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sliceangle a 1D array with the angles (from horizontal) of the slices 
+
+radii a 1D array with the peak brightness radii of the individual slices 
+
+radiusL a 1D array with the radius of the half point on the left 
+
+radiusR a 1D array with the radius of the half point on the right
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+UofA Group
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+October 19, 2021
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000006}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyWarning}{Warning}
+No known warnings
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000006}{Todo}}]Nothing left \end{DoxyRefDesc}
+\mbox{\Hypertarget{namespacecharm_a5607b264551d2edebff8f7491a53e838}\label{namespacecharm_a5607b264551d2edebff8f7491a53e838}} 
+\index{charm@{charm}!zcr@{zcr}}
+\index{zcr@{zcr}!charm@{charm}}
+\subsubsection{\texorpdfstring{zcr()}{zcr()}}
+{\footnotesize\ttfamily def charm.\+zcr (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+
+
+Finds zero crossings. 
+
+Given two arrays of the x-\/ and y-\/ coordinates of a function it returns an array of the x-\/coodinates of the zero crossings
+
+the x-\/coordinates are assumed to be in order
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & a float array with the x-\/coodinates \\
+\hline
+{\em y} & a float array with the y-\/coordinates\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a float array with the locations of the zero crossings
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+UofA Group
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+September 13, 2018
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000003}{Bug}}]No known bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyWarning}{Warning}
+No known warnings
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000003}{Todo}}]Nothing left \end{DoxyRefDesc}

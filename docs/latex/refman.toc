@@ -1,0 +1,20 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Haracterization Algorithm for Radius Measurements (C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}H\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}RM)}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Todo List}{3}{chapter.2}
+\contentsline {chapter}{\numberline {3}Bug List}{5}{chapter.3}
+\contentsline {chapter}{\numberline {4}Namespace Index}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}Namespace List}{7}{section.4.1}
+\contentsline {chapter}{\numberline {5}Namespace Documentation}{9}{chapter.5}
+\contentsline {section}{\numberline {5.1}charm Namespace Reference}{9}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{10}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Function Documentation}{10}{subsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.2.1}char\_image()}{11}{subsubsection.5.1.2.1}
+\contentsline {subsubsection}{\numberline {5.1.2.2}FilterImage()}{12}{subsubsection.5.1.2.2}
+\contentsline {subsubsection}{\numberline {5.1.2.3}findcenter()}{13}{subsubsection.5.1.2.3}
+\contentsline {subsubsection}{\numberline {5.1.2.4}ImageParams()}{14}{subsubsection.5.1.2.4}
+\contentsline {subsubsection}{\numberline {5.1.2.5}zcr()}{15}{subsubsection.5.1.2.5}
+\contentsline {section}{\numberline {5.2}plot\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Params Namespace Reference}{16}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{17}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Function Documentation}{17}{subsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2.1}setPlotParams()}{17}{subsubsection.5.2.2.1}
+\contentsline {chapter}{Index}{19}{section*.4}
